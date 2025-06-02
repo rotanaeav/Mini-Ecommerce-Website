@@ -24,5 +24,8 @@
     "preline": "^3.0.1",
     "swiper": "^11.2.8",
     "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4"
   }
 }
