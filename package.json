@@ -1,5 +1,36 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "tailwindcss": "^4.1.8"
+=======
+  "name": "mini-ecommerce-website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/rotanaeav/Mini-Ecommerce-Website#readme",
+  "bugs": {
+    "url": "https://github.com/rotanaeav/Mini-Ecommerce-Website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rotanaeav/Mini-Ecommerce-Website.git"
+  },
+  "license": "ISC",
+  "author": "RotanaEav",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "flowbite": "^3.1.2",
+    "preline": "^3.0.1",
+    "swiper": "^11.2.8",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.4"
+>>>>>>> 28fd9efca3a460148a721f8d226abd91bfb1097e
   }
 }
