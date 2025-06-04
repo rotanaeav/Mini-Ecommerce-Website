@@ -1,4 +1,3 @@
 node_modules/
-# src/output.css
-# package-lock.json
-# In your .gitignore file, add paths you want to exclude
+src/output.css
+package-lock.json
