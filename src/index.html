@@ -10,6 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <script src="../node_modules/preline/preline.js"></script>
     <script>
       function toggleDarkMode() {
         document.documentElement.classList.toggle("dark");
@@ -49,11 +50,12 @@
       });
     </script>
   </head>
-  <body class="bg-white dark:bg-gray-900 transition-colors duration-200">
+
+  <body class="max-w-[1444px] mx-auto">
     <header class="bg-white dark:bg-gray-800 shadow-md">
-      <div class="bg-blue-800 p-4">
+      <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
         <div
-          class="max-w-7xl mx-auto flex justify-between items-center text-lg"
+          class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
         >
           <h2 class="font-bold text-[#F4C500]">Mid-Year Sale</h2>
           <h2
@@ -74,39 +76,48 @@
             100% {
               transform: scale(1);
             }
+
             50% {
               transform: scale(1.1);
             }
           }
         </style>
       </div>
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- 1st nav -->
+      <div class="mx-auto px-2 md:px-4 lg:px-6 py-1">
         <div class="flex justify-between items-center h-16">
           <div class="flex-shrink-0 flex items-center">
-            <a href="#" class="flex items-center">
+            <a href="#" class="flex items-center gap-4">
               <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span class="text-lg p-4 text-gray-800 dark:text-white"
-                >👋👋👋</span
-              >
+              <span class="text-lg text-gray-800 dark:text-white">👋👋👋</span>
             </a>
           </div>
-          <div class="flex items-center">
+          <!-- search  -->
+<div class="flex-1 max-w-xl mx-8 hidden lg:block">
+    <div class="flex">
+        <input type="search" class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" placeholder="Search">
+        <button type="submit" class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            Search
+        </button>
+    </div>
+</div>
+          <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
             <a
               href="#"
-              class="flex items-center px-4 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              ><i class="fa-solid fa-cart-shopping fa-lg md:px-2"></i>
+              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+              ><i class="fa-solid fa-cart-shopping fa-lg"></i>
               <span class="hidden md:block">Cart</span>
             </a>
             <a
               href="#"
-              class="flex items-center px-4 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
             >
-              <i class="hidden md:block fa-solid fa-user fa-lg md:px-2"></i>
+              <i class="hidden md:block fa-solid fa-user fa-lg"></i>
               <span class="hidden md:block">Sign In</span>
             </a>
             <button
               onclick="toggleDarkMode()"
-              class="ml-3 md:px-2 rounded-full text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
             >
               <img
                 src="./Logo/light.png"
@@ -116,7 +127,7 @@
               <img
                 src="./Logo/night-mode.png"
                 alt="night-mode"
-                class="h-5 w-5 mr-2 block dark:hidden"
+                class="h-5 w-5 block dark:hidden"
               />
             </button>
           </div>
@@ -124,17 +135,17 @@
       </div>
       <hr class="text-gray-200 dark:text-gray-400 shadow-sm shadow-grey-400" />
       <!-- 2nd nav  -->
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="mx-auto px-2 md:px-4 lg:px-6 py-1">
         <div class="flex justify-between h-14">
           <div class="flex items-center">
             <div class="relative inline-block text-left">
               <button
                 id="category-button"
                 type="button"
-                class="inline-flex items-center px-4 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
+                class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
               >
                 Categories
-                <i class="fa-solid fa-caret-down ml-2 -mr-1 h-5 w-5"></i>
+                <i class="fa-solid fa-caret-down h-5 w-5"></i>
               </button>
               <div
                 id="category-dropdown"
@@ -143,25 +154,25 @@
                 <div class="py-1" role="menu" aria-orientation="vertical">
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                     role="menuitem"
                     >APPLE</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                     role="menuitem"
                     >SAMSUNG</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                     role="menuitem"
                     >GOOGLE</a
                   >
                   <a
                     href="#"
-                    class="block px-4 py-2 text-sm text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                     role="menuitem"
                     >OPPO</a
                   >
@@ -171,25 +182,25 @@
           </div>
 
           <div class="hidden md:flex items-center justify-end flex-1">
-            <div class="flex space-x-4">
+            <div class="flex gap-6 md:gap-8 lg:gap-10">
               <a
-                href="#"
-                class="flex items-center px-3 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                href="./index.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
-                <i class="fa-solid fa-house fa-lg px-2"></i>
+                <i class="fa-solid fa-house fa-lg"></i>
                 Home
               </a>
               <a
-                href="#"
-                class="flex items-center px-3 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                ><i class="fa-solid fa-mobile-screen-button fa-lg mx-2"></i>
+                href="./product.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                ><i class="fa-solid fa-mobile-screen-button fa-lg"></i>
                 Products</a
               >
               <a
-                href="#"
-                class="flex items-center px-3 py-2 text-md font-medium text-blue-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                href="./about.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
-                <i class="fa-solid fa-circle-info fa-lg mx-2"></i>About Us</a
+                <i class="fa-solid fa-circle-info fa-lg"></i>About Us</a
               >
             </div>
           </div>
@@ -199,26 +210,12 @@
             <button
               id="mobile-menu-button"
               type="button"
-              class="inline-flex items-center justify-center p-2 rounded-md text-blue-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              class="inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
               <span class="sr-only">Open main menu</span>
-              <svg
-                class="h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              <i class="fa-solid fa-bars"></i>
             </button>
           </div>
         </div>
@@ -227,8 +224,497 @@
       <!-- mobile menu  -->
       <div id="mobile-menu" class="hidden md:hidden"></div>
     </header>
-    <div>
-      <h2></h2>
+    <section
+      data-hs-carousel='{
+    "loadingClasses": "opacity-0",
+    "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
+    "isAutoPlay": true
+  }'
+      class="relative"
+    >
+      <div
+        class="hs-carousel relative overflow-hidden xl:mx-auto min-h-100 bg-white"
+      >
+        <div
+          class="hs-carousel-body top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0"
+        >
+          <div class="hs-carousel-slide">
+            <div
+              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
+            >
+              <div
+                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
+              >
+                <div
+                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
+                >
+                  <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
+                    iPhone 16 Pro Series
+                  </h2>
+                  <p
+                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
+                  >
+                    iPhone 16 Pro comes with a larger screen of 6.3" and 16 Pro
+                    Max of up to 6.9". <br />The edge of the screen is shorter
+                    than before. Equipped with 48MP Fusion + 48MP ultra wide
+                    sensor + 12MP 5x Telephoto can record 4K 120fps video and
+                    equipped with another Camera Control button. Integrated with
+                    the new A18 Pro chip and a longer battery life, together
+                    with Grade 5 Titanium material. 🔘<br />Available in four
+                    colors: Desert Titanium, Natural Titanium, Black Titanium
+                    and White Titanium
+                  </p>
+                  <a class="delay-4" href="#"
+                    ><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
+                    >
+                      <span>AVAILABLE NOW</span> <i class="pl-1">></i>
+                    </button></a
+                  >
+                </div>
+                <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
+                  <img
+                    src="../img/Home/iphone-16-pro-and-16-pro-max.png"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hs-carousel-slide">
+            <div
+              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
+            >
+              <div
+                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
+              >
+                <div
+                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
+                >
+                  <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
+                    Galaxy S25 Ultra - AI
+                  </h2>
+                  <p
+                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
+                  >
+                   Sleek. Strong. Stunning.<br />Galaxy AI takes
+                            innovation to the next level.Galaxy S25 Ultra,
+                            designed with an upgraded titanium exterior, a
+                            built-in S Pen, and an impressive 250MP wide-angle
+                            camera paired with 4x Optical Quality Zoom for
+                            unmatched photography. Powered by the advanced
+                            Gemini AI, it enables groundbreaking features like
+                            Circle to Search with Google, redefining what's
+                            possible.Available in four stunning colours:
+                            Titanium Silver Blue, Titanium Black, Titanium White
+                            Silver , Titanium Gray , Titanium Jetblack and
+                            Titanium Jadegreen.
+                  </p>
+                  <a class="delay-4" href="#"
+                    ><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
+                    >
+                      <span>AVAILABLE NOW</span> <i class="pl-1">></i>
+                    </button></a
+                  >
+                </div>
+                <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
+                  <img
+                    src="../img/Home/galaxy-s25-ultra-all-colors.png"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hs-carousel-slide">
+            <div
+              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
+            >
+              <div
+                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
+              >
+                <div
+                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
+                >
+                  <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
+                    Samsung Galaxy S25
+                  </h2>
+                  <p
+                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
+                  >
+                    Sleek. Smart. Powerful.<br />The Galaxy S25 and S25
+                            Plus bring cutting-edge performance with Snapdragon
+                            8 Elite, Dynamic AMOLED 2X displays, and Galaxy AI
+                            for smarter features like Circle to Search.<br />Capture
+every detail with a 50MP main camera and enjoy
+                            all-day power with 4000mAh (S25) or 4900mAh (S25Plus). Built with Gorilla Glass Victus 2 and
+                            available in Icy Blue, Mint, Navy, Silver Shadow.
+                  </p>
+                  <a class="delay-4" href="#"
+                    ><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
+                    >
+                      <span>AVAILABLE NOW</span> <i class="pl-1">></i>
+                    </button></a
+                  >
+                </div>
+                <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
+                  <img
+                    src="../img/Home/galaxy-s25-and-s25-plus.png"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hs-carousel-slide">
+            <div
+              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
+            >
+              <div
+                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
+              >
+                <div
+                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
+                >
+                  <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
+                    Google Pixel 9 Series
+                  </h2>
+                  <p
+                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
+                  >
+                    The new Pixel 9 series, New AI, offers a range of
+                            advanced features including a 6.3-inch Full HD+
+                            display, Chip Tensor G4 and Gorilla Glass Victus 2
+                            protection, dual 50 MP main and 48 MP ultrawide
+                            cameras, and 4K video recording. The Pro models add
+                            a 48 MP 5x telephoto lens and the Pro XL has a
+                            battery of 5060 mAh.Comes in 4 stunning colours.From the Pixel 9 & 9 Pro to the 9 Pro XL & 9 Pro Fold, every model is built to impress. And with the Google Pixel 9a just around the corner, the lineup just keeps getting better!
+                  </p>
+                  <a class="delay-4" href="#"
+                    ><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
+                    >
+                      <span>AVAILABLE NOW</span> <i class="pl-1">></i>
+                    </button></a
+                  >
+                </div>
+                <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
+                  <img
+                    src="../img/Home/google-pixel-9-series.png" width="100%"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hs-carousel-slide">
+            <div
+              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
+            >
+              <div
+                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
+              >
+                <div
+                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
+                >
+                  <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
+                    Galaxy S25 Ultra - AI
+                  </h2>
+                  <p
+                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
+                  >
+                   Sleek. Strong. Stunning.<br />Galaxy AI takes
+                            innovation to the next level.Galaxy S25 Ultra,
+                            designed with an upgraded titanium exterior, a
+                            built-in S Pen, and an impressive 250MP wide-angle
+                            camera paired with 4x Optical Quality Zoom for
+                            unmatched photography. Powered by the advanced
+                            Gemini AI, it enables groundbreaking features like
+                            Circle to Search with Google, redefining what’s
+                            possible.Available in four stunning colours:
+                            Titanium Silver Blue, Titanium Black, Titanium White
+                            Silver , Titanium Gray , Titanium Jetblack and
+                            Titanium Jadegreen.
+                  </p>
+                  <a class="delay-4" href="#"
+                    ><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
+                    >
+                      <span>AVAILABLE NOW</span> <i class="pl-1">></i>
+                    </button></a
+                  >
+                </div>
+                <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
+                  <img
+                    src="../img/Home/galaxy-s25-ultra-all-colors.png"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+      >
+        <span class="text-2xl" aria-hidden="true">
+          <svg
+            class="shrink-0 size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+        </span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button
+        type="button"
+        class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+      >
+        <span class="sr-only">Next</span>
+        <span class="text-2xl" aria-hidden="true">
+          <svg
+            class="shrink-0 size-5"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </span>
+      </button>
+
+      <div
+        class="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 gap-x-2"
+      ></div>
+      <!-- why us -->
+    </section>
+     <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Why Choose iStore?</h2>
+                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    We provide the best shopping experience with premium products and exceptional service.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fast Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Get your products delivered within 24 hours with our express shipping service.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Warranty Protection</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        All products come with comprehensive warranty and 24/7 customer support.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Free Shipping</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Enjoy free shipping on all orders above $99. No hidden costs or fees.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- feature Pro -->
+
+<section class="py-12 bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto px-4 md:px-5 lg:px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Products</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover our latest and most popular smartphones from top brands</p>
     </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-8">
+      <!-- iPhone 16 Pro Max -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/16 pro max home.png" alt="iPhone 16 Pro Max" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro Max</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The ultimate iPhone with the largest display and longest battery life.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$1,199</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- iPhone 16 Pro -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/iPhone_16_ProHome.png" alt="iPhone 16 Pro" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Pro camera system and powerful performance in a perfect size.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Samsung Galaxy S25 Ultra -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/s25 u home.png" alt="Samsung Galaxy S25 Ultra" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Ultra</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Revolutionary camera system with advanced AI capabilities.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$1,299</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Samsung Galaxy S25 Plus -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/s25 + home.png" alt="Samsung Galaxy S25 Plus" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Plus</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Larger screen and battery in a sleek, premium design.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Samsung Galaxy S25 Edge -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/s25 edge home.png" alt="Samsung Galaxy S25 Edge" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Edge</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Curved edge display with immersive viewing experience.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Google Pixel 9 Pro -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/pixel 9 pro.png" alt="Google Pixel 9 Pro" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The best of Google AI with an exceptional camera experience.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Google Pixel 9 Pro XL -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/pixel 9 pro xl.png" alt="Google Pixel 9 Pro XL" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro XL</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Largest Pixel display with all-day battery life and AI features.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- OPPO Reno 14 Pro -->
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+          <img src="../img/Home/reno14.png" alt="OPPO Reno 14 Pro" class="h-40 w-auto object-contain" />
+        </div>
+        <div class="p-6 flex flex-col flex-grow">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">OPPO Reno 14 Pro</h3>
+          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Stunning design with advanced camera system and fast charging.</p>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$799</span>
+            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- news  -->
+      <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-4">Stay Updated with iStore</h2>
+                <p class="text-xl mb-8 opacity-90">Get the latest deals, product updates, and tech news delivered to your inbox</p>
+                <div class="max-w-md mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input
+                            type="email"
+                            placeholder="Enter your email address"
+                            class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 placeholder-gray-500"
+                        />
+                        <button class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 whitespace-nowrap">
+                            Subscribe Now
+                        </button>
+                    </div>
+                    <p class="text-sm opacity-75 mt-3">No spam, unsubscribe at any time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- foot -->
+
   </body>
 </html>
