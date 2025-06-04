@@ -1,6 +1,4 @@
 node_modules/
-src/output.css
-package-lock.json
+# src/output.css
+# package-lock.json
 # In your .gitignore file, add paths you want to exclude
-Final/node_modules/
-Final/package-lock.json
