@@ -1,8 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "tailwindcss": "^4.1.8"
-=======
   "name": "mini-ecommerce-website",
   "version": "1.0.0",
   "description": "",
@@ -31,6 +27,5 @@
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4"
->>>>>>> 28fd9efca3a460148a721f8d226abd91bfb1097e
   }
 }
