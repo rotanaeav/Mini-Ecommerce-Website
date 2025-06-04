@@ -56,7 +56,7 @@
     <div
       class="w-full container m-auto dark:bg-gray-900 transition-colors duration-200"
     >
-      <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0">
+      <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
         <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
           <div
             class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
@@ -211,7 +211,7 @@
                 </a>
                 <a
                   href="./product.html"
-                  class="flex items-center text-md font-medium gap-2 text-blue-900 px-4 py-2 bg-gray-100 dark:bg-gray-700 rounded-lg dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                  class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
                   ><i class="fa-solid fa-mobile-screen-button fa-lg"></i>
                   Products</a
                 >
@@ -241,7 +241,23 @@
         </nav>
 
         <!-- mobile menu  -->
-        <div id="mobile-menu" class="hidden md:hidden"></div>
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1">
+          <a
+            href="./index.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Home</a
+          >
+          <a
+            href="./product.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >Products</a
+          >
+          <a
+            href="./about.html"
+            class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+            >About Us</a
+          >
+        </div>
       </header>
       <!-- end -->
       <section class="antialiased dark:bg-gray-900 lg:mx-8 lg:mt-4">

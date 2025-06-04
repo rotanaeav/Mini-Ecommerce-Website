@@ -52,7 +52,7 @@
   </head>
 
   <body class="max-w-[1444px] mx-auto">
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0">
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
         <div
           class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
@@ -208,21 +208,38 @@
           <!-- Menu on mobile -->
           <div class="flex items-center md:hidden">
             <button
-              id="mobile-menu-button"
-              type="button"
-              class="inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <i class="fa-solid fa-bars"></i>
-            </button>
+  id="mobile-menu-button"
+  type="button"
+  class="inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+  aria-controls="mobile-menu"
+  aria-expanded="false"
+>
+  <span class="sr-only">Open main menu</span>
+  <i class="fa-solid fa-bars"></i>
+</button>
+
           </div>
         </div>
       </nav>
 
       <!-- mobile menu  -->
-      <div id="mobile-menu" class="hidden md:hidden"></div>
+      <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1">
+  <a
+    href="./index.html"
+    class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+    >Home</a
+  >
+  <a
+    href="./product.html"
+    class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+    >Products</a
+  >
+  <a
+    href="./about.html"
+    class="block px-3 py-2 rounded-md text-base font-medium text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+    >About Us</a
+  >
+</div>
     </header>
     <section
       data-hs-carousel='{
@@ -872,5 +889,18 @@ every detail with a 50MP main camera and enjoy
             </div>
         </div>
     </footer>   
-  </body>
+  <!-- mobile men -->
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
+
+ 
+</body>
 </html>
