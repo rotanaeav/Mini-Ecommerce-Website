@@ -1,10 +1,12 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pro-Zone Phone Shop</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+</style>
     <link rel="stylesheet" href="output.css" />
     <link
       rel="stylesheet"
@@ -22,15 +24,7 @@
         const isDark = localStorage.getItem("darkMode") === "true";
         if (isDark) {
           document.documentElement.classList.add("dark");
-        }
-
-        const mobileMenuBtn = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-        // drop-down
+        }});
         const categoryBtn = document.getElementById("category-button");
         const categoryDropdown = document.getElementById("category-dropdown");
 
@@ -47,12 +41,20 @@
             categoryDropdown.classList.add("hidden");
           }
         });
+// menu mobile 
+        document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
       });
     </script>
   </head>
 
   <body class="max-w-[1444px] mx-auto">
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0">
+    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
       <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
         <div
           class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
@@ -89,7 +91,7 @@
           <div class="flex-shrink-0 flex items-center">
             <a href="#" class="flex items-center gap-4">
               <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span class="text-lg text-gray-800 dark:text-white">👋👋👋</span>
+              <span class="text-3xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span>
             </a>
           </div>
           <!-- search  -->
@@ -109,11 +111,11 @@
               <span class="hidden md:block">Cart</span>
             </a>
             <a
-              href="./User.html"
+              href="./login.html"
               class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
             >
               <i class="hidden md:block fa-solid fa-user fa-lg"></i>
-              <span class="hidden md:block">Sign In</span>
+              <span class="hidden md:block">Account</span>
             </a>
             <button
               onclick="toggleDarkMode()"
@@ -185,7 +187,7 @@
             <div class="flex gap-6 md:gap-8 lg:gap-10">
               <a
                 href="./index.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
                 <i class="fa-solid fa-house fa-lg"></i>
                 Home
@@ -202,27 +204,41 @@
               >
                 <i class="fa-solid fa-circle-info fa-lg"></i>About Us</a
               >
+              <a
+                href="./contact.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+              >
+                <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a
+              >
             </div>
           </div>
 
           <!-- Menu on mobile -->
           <div class="flex items-center md:hidden">
-            <button
-              id="mobile-menu-button"
-              type="button"
-              class="inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <i class="fa-solid fa-bars"></i>
-            </button>
+                      <button id="mobile-menu-button" type="button"
+            class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <i class="fa-solid fa-bars"></i>
+          </button>
           </div>
         </div>
       </nav>
 
       <!-- mobile menu  -->
-      <div id="mobile-menu" class="hidden md:hidden"></div>
+    <div id="mobile-menu"
+      class="hidden md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-4 border-t border-gray-200 dark:border-gray-700 z-40">
+      <a href="./index.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
+        <i class="fa-solid fa-house mr-2"></i>Home
+      </a>
+      <a href="./product.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
+        <i class="fa-solid fa-mobile-screen-button mr-2"></i>Products
+      </a>
+      <a href="./about.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
+        <i class="fa-solid fa-circle-info mr-2"></i>About Us
+      </a>
+    </div>
+
     </header>
     <section
       data-hs-carousel='{
@@ -722,7 +738,10 @@ every detail with a 50MP main camera and enjoy
             <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                 <!-- Company Info -->
                 <div class="lg:col-span-1 space-y-4">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20istore-Ow98qgeTvwOro95KH6zi1gLGOcdzII.png" alt="iStore Logo" class="h-8 w-auto dark:brightness-0 dark:invert">
+                  <a href="./index.html" class="flex items-center">
+                    <img src="./Logo/ProZone.png" alt="Pro-Zone Logo" class="h-8 w-auto">
+                    <span class="text-xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span></a>
+
                     <p class="text-gray-600 dark:text-gray-300 text-sm max-w-md">Your trusted partner for premium tech products and exceptional service. Quality guaranteed with fast delivery and comprehensive warranty.</p>
                     
                     <!-- Payment Methods -->
@@ -747,37 +766,7 @@ every detail with a 50MP main camera and enjoy
                         </div>
                     </div>
 
-                    <!-- Social Media Section -->
-                    <div class="pt-5">
-                        <p class="text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">Follow us</p>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Facebook</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Instagram</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Telegram</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-  <path fill-rule="evenodd" d="M9.036 16.455l-.345 4.02c.492 0 .707-.21.963-.456l2.331-2.214 4.83 3.522c.879.492 1.503.237 1.731-.819l3.117-14.733c.284-1.362-.492-1.89-1.416-1.533L2.037 9.204c-1.362.513-1.332 1.254-.225 1.59l4.65 1.446 10.773-6.804c.513-.342.963-.152.597.189l-8.796 7.998z" clip-rule="evenodd" />
-                                </svg>
-
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">YouTube</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+                  
                 </div>
 
                 <!-- Company -->
@@ -831,13 +820,13 @@ every detail with a 50MP main camera and enjoy
                         <li>
                             <a href="#" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">
                                 <svg class="w-4 h-4 mr-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <!-- Shopping Bag -->
-  <path fill="currentColor" d="M352 144v-16c0-35.3-28.7-64-64-64h-64c-35.3 0-64 28.7-64 64v16H96c-17.7 0-32 14.3-32 32v272c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V176c0-17.7-14.3-32-32-32h-64zm-160-16c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48v16h-128v-16z"/>
-  <rect x="192" y="220" width="48" height="48" fill="white"/>
-  <rect x="280" y="220" width="48" height="48" fill="white"/>
-  <rect x="192" y="320" width="48" height="48" fill="white"/>
-  <rect x="280" y="320" width="48" height="48" fill="white"/>
-</svg>
+                  <!-- Shopping Bag -->
+                  <path fill="currentColor" d="M352 144v-16c0-35.3-28.7-64-64-64h-64c-35.3 0-64 28.7-64 64v16H96c-17.7 0-32 14.3-32 32v272c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V176c0-17.7-14.3-32-32-32h-64zm-160-16c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48v16h-128v-16z"/>
+                  <rect x="192" y="220" width="48" height="48" fill="white"/>
+                  <rect x="280" y="220" width="48" height="48" fill="white"/>
+                  <rect x="192" y="320" width="48" height="48" fill="white"/>
+                  <rect x="280" y="320" width="48" height="48" fill="white"/>
+                </svg>
                                 Microsoft Store
                             </a>
                         </li>
@@ -854,7 +843,37 @@ every detail with a 50MP main camera and enjoy
             </div>
 
             <!-- Bottom Section -->
-            <div class="border-t border-gray-200 dark:border-slate-800 pt-8 pb-8">
+            <div class="flex justify-between items-center border-t border-gray-200 dark:border-slate-800 pt-8 pb-8">
+                <!-- Social Media Section -->
+                    <div class="">
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                                <span class="sr-only">Facebook</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                                <span class="sr-only">Instagram</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                                <span class="sr-only">Telegram</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+  <path fill-rule="evenodd" d="M9.036 16.455l-.345 4.02c.492 0 .707-.21.963-.456l2.331-2.214 4.83 3.522c.879.492 1.503.237 1.731-.819l3.117-14.733c.284-1.362-.492-1.89-1.416-1.533L2.037 9.204c-1.362.513-1.332 1.254-.225 1.59l4.65 1.446 10.773-6.804c.513-.342.963-.152.597.189l-8.796 7.998z" clip-rule="evenodd" />
+                                </svg>
+
+                            </a>
+                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                                <span class="sr-only">YouTube</span>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600 dark:text-gray-300">
                     <p>&copy; 2025 iStore. All rights reserved.</p>
                     <div class="flex space-x-6">
@@ -867,10 +886,24 @@ every detail with a 50MP main camera and enjoy
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
                     </svg>
-                    <span>Secure Shopping</span>
+                    <span class="hidden lg:inline">Secure Shopping</span>
                 </div>
             </div>
         </div>
     </footer>   
-  </body>
+  <!-- mobile men -->
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  });
+</script>
+
+ 
+
+ <script src="../path/to/flowbite/dist/flowbite.min.js"></script></body>
 </html>
