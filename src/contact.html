@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pro-Zone Phone Shop</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
+    </style>
     <link rel="stylesheet" href="output.css" />
     <link
       rel="stylesheet"
@@ -90,7 +93,10 @@
           <div class="flex-shrink-0 flex items-center">
             <a href="#" class="flex items-center gap-4">
               <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span class="text-lg text-gray-800 dark:text-white">👋👋👋</span>
+              <span
+                class="text-3xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
+                >PRO-ZONE</span
+              >
             </a>
           </div>
           <!-- search  -->
@@ -117,11 +123,11 @@
               <span class="hidden md:block">Cart</span>
             </a>
             <a
-              href="./User.html"
+              href="./login.html"
               class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
             >
               <i class="hidden md:block fa-solid fa-user fa-lg"></i>
-              <span class="hidden md:block">Sign In</span>
+              <span class="hidden md:block">Account</span>
             </a>
             <button
               onclick="toggleDarkMode()"
@@ -212,7 +218,7 @@
               >
               <a
                 href="./contact.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
                 <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a
               >
@@ -774,11 +780,17 @@
         <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <!-- Company Info -->
           <div class="space-y-4">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20istore-Ow98qgeTvwOro95KH6zi1gLGOcdzII.png"
-              alt="iStore Logo"
-              class="h-8 w-auto dark:brightness-0 dark:invert"
-            />
+            <a href="./index.html" class="flex items-center">
+              <img
+                src="./Logo/ProZone.png"
+                alt="Pro-Zone Logo"
+                class="h-8 w-auto"
+              />
+              <span
+                class="text-xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
+                >PRO-ZONE</span
+              ></a
+            >
             <p class="text-gray-600 dark:text-gray-300 text-sm">
               Your trusted partner for premium tech products and exceptional
               service.
@@ -872,13 +884,13 @@
             </h3>
             <div class="space-y-3 text-sm">
               <p class="text-gray-600 dark:text-gray-300">
-                123 Tech Street<br />Silicon Valley, CA 94105
+                123 Tech Street<br />Stueung Mean Chey, Phnom Penh.
               </p>
               <p class="text-gray-600 dark:text-gray-300">
-                Phone: +1 (555) 123-4567
+                Phone: +855 10399903
               </p>
               <p class="text-gray-600 dark:text-gray-300">
-                Email: support@istore.com
+                Email: support@prozone.com
               </p>
             </div>
           </div>
@@ -890,7 +902,7 @@
             class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0"
           >
             <p class="text-sm text-gray-600 dark:text-gray-300">
-              &copy; 2024 iStore. All rights reserved.
+              &copy; 2025 Pro_Zone. All rights reserved.
             </p>
             <div class="flex space-x-6 text-sm">
               <a
@@ -978,6 +990,18 @@
       document.querySelector("form").addEventListener("submit", function (e) {
         e.preventDefault();
         alert("Thank you for your message! We'll get back to you soon.");
+      });
+    </script>
+
+    <!-- mobile men -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
       });
     </script>
   </body>
