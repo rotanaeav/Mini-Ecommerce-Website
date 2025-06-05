@@ -1,115 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sign In - Sign Up</title>
-    <link rel="stylesheet" href="./output.css" />
-    <style>
-      button {
-        transition: all 0.3s ease;
-      }
+<html lang="en">
 
-      button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(29, 78, 216, 0.4);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>iPhone Store | Welcome</title>
+  <link rel="stylesheet" href="./output.css" />
+  <style>
+    button {
+      transition: all 0.3s ease;
+    }
 
-      button:active {
-        transform: scale(0.95);
-        box-shadow: none;
-      }
-    </style>
-  </head>
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(29, 78, 216, 0.4);
+    }
 
-  <body
-    class="bg-gray-50 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 md:p-6 transition-colors duration-500"
-  >
-    <!-- Toggle Theme Button -->
-    <button
-      id="theme-toggle"
-      class="absolute top-4 right-4 text-2xl p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-      aria-label="Toggle Dark Mode"
-    >
-      <span id="theme-icon">🌙</span>
-    </button>
+    button:active {
+      transform: scale(0.95);
+      box-shadow: none;
+    }
+  </style>
+</head>
 
-    <div
-      class="bg-white dark:bg-gray-800 rounded-[2rem] shadow-[0_20px_50px_rgba(29,78,216,0.25)] w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-2 overflow-hidden transition-colors duration-500"
-    >
-      <!-- Left side -->
-      <div
-        class="relative flex items-center justify-center min-h-[300px] md:min-h-[600px] w-full"
-        style="
-          background-image: url('./image/online.jpg');
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-[1100px] grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+    <!-- Left Image Side -->
+    <div class="relative flex items-center justify-center min-h-[400px] md:min-h-[550px] w-full" style="
+          background-image: url('./Login/image/online.jpg');
           background-size: cover;
           background-position: center;
-        "
-      >
-        <div
-          class="absolute inset-0 bg-blue-800 bg-opacity-80 flex flex-col justify-center items-center px-8 md:px-20 text-white text-center space-y-6"
-        >
-          <h2
-            class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-lg"
-          >
-            Latest Phones,<br />Best Deals
-          </h2>
-          <p class="text-lg md:text-xl max-w-md drop-shadow-md">
-            Welcome to our store! Discover premium phones with unbeatable prices
-            and top-notch service.
-          </p>
-        </div>
-      </div>
-
-      <!-- Right side -->
+        ">
       <div
-        class="p-8 sm:p-12 md:p-16 flex flex-col justify-center items-center space-y-12 bg-white dark:bg-gray-800 transition-colors duration-500"
-      >
-        <h1
-          class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white text-center"
-        >
-          Welcome, Valued Customer!
-        </h1>
-
-        <div class="flex flex-col space-y-8 w-full max-w-xs sm:max-w-sm">
-          <button
-            class="w-full py-4 sm:py-5 bg-blue-700 text-white rounded-2xl font-semibold shadow-lg hover:bg-blue-800 active:scale-95"
-            onclick="window.location.href='./Login/signin.html'"
-          >
-            Sign In
-          </button>
-          <button
-            class="w-full py-4 sm:py-5 border-4 border-blue-700 text-blue-700 dark:text-blue-300 rounded-2xl font-semibold shadow-lg hover:bg-blue-700 hover:text-white active:scale-95"
-            onclick="window.location.href='./Login/signup.html'"
-          >
-            Sign Up
-          </button>
-        </div>
+        class="absolute inset-0 bg-blue-800 bg-opacity-80 flex flex-col justify-center items-center px-8 text-white text-center space-y-6">
+        <h2 class="text-4xl font-extrabold leading-tight drop-shadow-lg">
+          Latest Phones,<br />Best Deals
+        </h2>
+        <p class="text-lg max-w-md drop-shadow-md">
+          Discover premium iPhones with unbeatable prices and service.
+        </p>
       </div>
     </div>
 
-    <!-- JavaScript for Toggle -->
-    <script>
-      const toggleBtn = document.getElementById("theme-toggle");
-      const icon = document.getElementById("theme-icon");
-      const html = document.documentElement;
+    <!-- Right Form Side -->
+    <div class="p-10 flex flex-col justify-center items-center space-y-10 bg-white">
+      <h1 class="text-3xl font-extrabold text-gray-900 text-center">
+        Welcome, Valued Customer!
+      </h1>
 
-      // Load theme from localStorage
-      if (localStorage.theme === "dark") {
-        html.classList.add("dark");
-        icon.textContent = "☀️";
-      }
+      <div class="flex flex-col space-y-6 w-full max-w-xs">
+        <button class="w-full py-3 bg-blue-700 text-white rounded-2xl font-semibold shadow-md hover:bg-blue-800"
+          onclick="window.location.href='./Login/signin.html'">
+          Sign In
+        </button>
+        <button
+          class="w-full py-3 border-2 border-blue-700 text-blue-700 rounded-2xl font-semibold shadow-md hover:bg-blue-700 hover:text-white"
+          onclick="window.location.href='./Login/signup.html'">
+          Sign Up
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
 
-      toggleBtn.addEventListener("click", () => {
-        html.classList.toggle("dark");
-        if (html.classList.contains("dark")) {
-          icon.textContent = "☀️";
-          localStorage.theme = "dark";
-        } else {
-          icon.textContent = "🌙";
-          localStorage.theme = "light";
-        }
-      });
-    </script>
-  </body>
 </html>
