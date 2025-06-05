@@ -1,1 +1,6 @@
-@import "tailwindcss"
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+@import "flowbite/src/themes/default";
+@import "../node_modules/preline/variants.css";Add commentMore actions
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";Add comment
