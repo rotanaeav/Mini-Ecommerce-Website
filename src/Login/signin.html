@@ -1,270 +1,63 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro-Zone Phone Shop</title>
+    <title>iPhone Store | Sign In</title>
+    <link rel="stylesheet" href="../output.css" />
+
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap");
-    </style>
-    <link rel="stylesheet" href="output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <script src="../node_modules/preline/preline.js"></script>
-    <script>
-      function toggleDarkMode() {
-        document.documentElement.classList.toggle("dark");
-        const isDark = document.documentElement.classList.contains("dark");
-        localStorage.setItem("darkMode", isDark);
+      @keyframes floatImage {
+        0% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-10px);
+        }
+
+        100% {
+          transform: translateY(0);
+        }
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const isDark = localStorage.getItem("darkMode") === "true";
-        if (isDark) {
-          document.documentElement.classList.add("dark");
+      .float-animate {
+        animation: floatImage 4s ease-in-out infinite;
+      }
+
+      @keyframes fadeInSlide {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
         }
-      });
-      const categoryBtn = document.getElementById("category-button");
-      const categoryDropdown = document.getElementById("category-dropdown");
 
-      categoryBtn.addEventListener("click", () => {
-        categoryDropdown.classList.toggle("hidden");
-      });
-
-      //funtion -dropdown
-      document.addEventListener("click", (e) => {
-        if (
-          !categoryBtn.contains(e.target) &&
-          !categoryDropdown.contains(e.target)
-        ) {
-          categoryDropdown.classList.add("hidden");
+        100% {
+          opacity: 1;
+          transform: translateY(0);
         }
-      });
-      // menu mobile
-      document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
+      }
 
-        mobileMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-      });
-    </script>
+      .fade-in-slide {
+        animation: fadeInSlide 1s ease-out forwards;
+      }
+
+      @keyframes rotateSlow {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .rotate-slow {
+        animation: rotateSlow 20s linear infinite;
+      }
+    </style>
   </head>
 
-  <body class="max-w-[1444px] mx-auto">
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-      <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
-        <div
-          class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
-        >
-          <h2 class="font-bold text-[#F4C500]">Mid-Year Sale</h2>
-          <h2
-            class="font-bold text-[#F4C500] animate-[scale_1.5s_ease-in-out_infinite]"
-          >
-            15% OFF
-          </h2>
-          <button
-            class="font-bold p-1 md:px-4 md:py-1 rounded-md bg-[#F4C500] hover:bg-yellow-300"
-          >
-            Buy Now
-          </button>
-        </div>
-
-        <style>
-          @keyframes scale {
-            0%,
-            100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.1);
-            }
-          }
-        </style>
-      </div>
-      <!-- 1st nav -->
-      <div class="mx-auto px-2 md:px-4 lg:px-6 py-1">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex-shrink-0 flex items-center">
-            <a href="#" class="flex items-center gap-4">
-              <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span
-                class="text-3xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
-                >PRO-ZONE</span
-              >
-            </a>
-          </div>
-          <!-- search  -->
-          <div class="flex-1 max-w-xl mx-8 hidden lg:block">
-            <div class="flex">
-              <input
-                type="search"
-                class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search"
-              />
-              <button
-                type="submit"
-                class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Search
-              </button>
-            </div>
-          </div>
-          <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
-            <a
-              href="#"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              ><i class="fa-solid fa-cart-shopping fa-lg"></i>
-              <span class="hidden md:block">Cart</span>
-            </a>
-            <a
-              href="./login.html"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-            >
-              <i class="hidden md:block fa-solid fa-user fa-lg"></i>
-              <span class="hidden md:block">Account</span>
-            </a>
-            <button
-              onclick="toggleDarkMode()"
-              class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-            >
-              <img
-                src="./Logo/light.png"
-                alt="light"
-                class="h-6 w-6 hidden dark:block"
-              />
-              <img
-                src="./Logo/night-mode.png"
-                alt="night-mode"
-                class="h-5 w-5 block dark:hidden"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-      <hr class="text-gray-200 dark:text-gray-400 shadow-sm shadow-grey-400" />
-      <!-- 2nd nav  -->
-      <nav class="mx-auto px-2 md:px-4 lg:px-6 py-1">
-        <div class="flex justify-between h-14">
-          <div class="flex items-center">
-            <div class="relative inline-block text-left">
-              <button
-                id="category-button"
-                type="button"
-                class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
-              >
-                Categories
-                <i class="fa-solid fa-caret-down h-5 w-5"></i>
-              </button>
-              <div
-                id="category-dropdown"
-                class="hidden origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10"
-              >
-                <div class="py-1" role="menu" aria-orientation="vertical">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >APPLE</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >SAMSUNG</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >GOOGLE</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >OPPO</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hidden md:flex items-center justify-end flex-1">
-            <div class="flex gap-6 md:gap-8 lg:gap-10">
-              <a
-                href="./index.html"
-                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-house fa-lg"></i>
-                Home
-              </a>
-              <a
-                href="./product.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                ><i class="fa-solid fa-mobile-screen-button fa-lg"></i>
-                Products</a
-              >
-              <a
-                href="./about.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-circle-info fa-lg"></i>About Us</a
-              >
-              <a
-                href="./contact.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a
-              >
-            </div>
-          </div>
-
-          <!-- Menu on mobile -->
-          <div class="flex items-center md:hidden">
-            <button
-              id="mobile-menu-button"
-              type="button"
-              class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <!-- mobile menu  -->
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-4 border-t border-gray-200 dark:border-gray-700 z-40"
-      >
-        <a
-          href="./index.html"
-          class="block text-blue-900 dark:text-white font-medium hover:underline"
-        >
-          <i class="fa-solid fa-house mr-2"></i>Home
-        </a>
-        <a
-          href="./product.html"
-          class="block text-blue-900 dark:text-white font-medium hover:underline"
-        >
-          <i class="fa-solid fa-mobile-screen-button mr-2"></i>Products
-        </a>
-        <a
-          href="./about.html"
-          class="block text-blue-900 dark:text-white font-medium hover:underline"
-        >
-          <i class="fa-solid fa-circle-info mr-2"></i>About Us
-        </a>
-      </div>
-    </header>
+  <body class="bg-white min-h-screen flex items-center justify-center px-4">
     <div
       class="bg-gray-100 rounded-2xl shadow-2xl flex flex-col md:flex-row w-full max-w-3xl overflow-hidden fade-in-slide transition duration-500"
     >
@@ -274,7 +67,7 @@
       >
         <div class="text-center">
           <img
-            src="./image/girl.jpg"
+            src="../Login/image/surprised-young-asia-lady-using-mobile-phone-with-positive-expression-smiles-broadly-dressed-casual-clothing-looking-camera-blue-background-happy-adorable-glad-woman-rejoices-success.jpg"
             alt="woman photo"
             class="float-animate rounded-lg shadow-lg w-full h-auto object-cover"
           />
