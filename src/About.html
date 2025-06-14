@@ -12,45 +12,47 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
     <script src="../node_modules/preline/preline.js"></script>
-    <script>
-      function toggleDarkMode() {
-        document.documentElement.classList.toggle("dark");
-        const isDark = document.documentElement.classList.contains("dark");
-        localStorage.setItem("darkMode", isDark);
-      }
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const isDark = localStorage.getItem("darkMode") === "true";
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const isDark = localStorage.getItem("darkMode") === "true";
-        if (isDark) {
-          document.documentElement.classList.add("dark");
-        }});
-        // drop-down
-        const categoryBtn = document.getElementById("category-button");
-        const categoryDropdown = document.getElementById("category-dropdown");
+    const categoryBtn = document.getElementById("category-button");
+    const categoryDropdown = document.getElementById("category-dropdown");
 
-        categoryBtn.addEventListener("click", () => {
-          categoryDropdown.classList.toggle("hidden");
-        });
-// menu mobile 
-        document.addEventListener("DOMContentLoaded", function () {
-        const mobileMenuBtn = document.getElementById("mobile-menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        mobileMenuBtn.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-        });
-
-        //funtion -dropdown
-        document.addEventListener("click", (e) => {
-          if (
-            !categoryBtn.contains(e.target) &&
-            !categoryDropdown.contains(e.target)
-          ) {
-            categoryDropdown.classList.add("hidden");
-          }
-        });
+    if (categoryBtn && categoryDropdown) {
+      categoryBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // prevent event bubbling
+        categoryDropdown.classList.toggle("hidden");
       });
-    </script>
+
+      document.addEventListener("click", (e) => {
+        if (
+          !categoryBtn.contains(e.target) &&
+          !categoryDropdown.contains(e.target)
+        ) {
+          categoryDropdown.classList.add("hidden");
+        }
+      });
+    }
+
+    const mobileMenuBtn = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  });
+  function toggleDarkMode() {
+    document.documentElement.classList.toggle("dark");
+    const isDark = document.documentElement.classList.contains("dark");
+    localStorage.setItem("darkMode", isDark);
+  }
+</script>
   </head>
 
   <body class="max-w-[1444px] mx-auto">
@@ -512,17 +514,5 @@
         </div>
       </div>
     </footer>
-
-     <!-- mobile men -->
- <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-  });
-</script>
   </body>
 </html>
