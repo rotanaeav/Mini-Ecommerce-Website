@@ -54,195 +54,204 @@
         localStorage.setItem("darkMode", isDark);
       }
     </script>
+
+    <style>
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.25);
+        }
+      }
+    </style>
   </head>
 
-  <body class="max-w-[1444px] mx-auto">
+  <body class="mx-auto">
     <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-      <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
+      <div class="bg-blue-600 dark:bg-blue-900 px-6 xl:px-0 py-4 mx-auto">
         <div
-          class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
+          class="mx-auto max-w-screen-xl flex justify-between items-center text-[14px] md:text-lg"
         >
-          <h2 class="font-bold text-[#F4C500]">Mid-Year Sale</h2>
+          <h2 class="font-bold text-white">Mid-Year Sale</h2>
           <h2
-            class="font-bold text-[#F4C500] animate-[scale_1.5s_ease-in-out_infinite]"
+            class="font-bold animate-[pulse_1.5s_ease-in-out_infinite] text-white"
           >
             15% OFF
           </h2>
-          <button
-            class="font-bold p-1 md:px-4 md:py-1 rounded-md bg-[#F4C500] hover:bg-yellow-300"
-          >
-            Buy Now
-          </button>
+          <div class="bg-blue-100 px-3 py-1.5 rounded-md">
+            <p class="text-blue-800 text-sm font-bold">Buy Now</p>
+          </div>
         </div>
-
-        <style>
-          @keyframes scale {
-            0%,
-            100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.1);
-            }
-          }
-        </style>
       </div>
       <!-- 1st nav -->
-      <div class="mx-auto px-2 md:px-4 lg:px-6 py-1">
-        <div class="flex justify-between items-center h-16">
-          <div class="flex-shrink-0 flex items-center">
-            <a href="#" class="flex items-center gap-4">
-              <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span
-                class="text-3xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
-                >PRO-ZONE</span
+      <div class="mx-auto px-6 xl:px-0 py-4">
+        <div class="align-middle">
+          <div
+            class="flex justify-between items-center h-16 max-w-screen-xl mx-auto"
+          >
+            <div class="flex-shrink-0 flex items-center">
+              <a href="#" class="flex items-center gap-4">
+                <img
+                  src="./Logo/ProZone.png"
+                  alt="Pro-Zone-logo"
+                  class="w-10"
+                />
+                <span
+                  class="text-2xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
+                  >PRO-ZONE</span
+                >
+              </a>
+            </div>
+            <!-- search -->
+            <div class="flex-1 max-w-xl mx-8 hidden lg:block">
+              <div class="flex">
+                <input
+                  type="search"
+                  class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                  placeholder="Search"
+                />
+                <button
+                  type="submit"
+                  class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Search
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
+              <a
+                href="#"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
               >
-            </a>
-          </div>
-          <!-- search  -->
-          <div class="flex-1 max-w-xl mx-8 hidden lg:block">
-            <div class="flex">
-              <input
-                type="search"
-                class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Search"
-              />
+                <i class="fa-solid fa-cart-shopping fa-md"></i>
+                <span class="hidden md:block">Cart</span>
+              </a>
+              <a
+                href="./login.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+              >
+                <i class="hidden md:block fa-solid fa-user fa-md"></i>
+                <span class="hidden md:block">Account</span>
+              </a>
               <button
-                type="submit"
-                class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onclick="toggleDarkMode()"
+                class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
               >
-                Search
+                <img
+                  src="./Logo/light.png"
+                  alt="light"
+                  class="h-5 w-5 hidden dark:block"
+                />
+                <img
+                  src="./Logo/night-mode.png"
+                  alt="night-mode"
+                  class="h-4 w-4 block dark:hidden"
+                />
               </button>
             </div>
           </div>
-          <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
-            <a
-              href="#"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              ><i class="fa-solid fa-cart-shopping fa-lg"></i>
-              <span class="hidden md:block">Cart</span>
-            </a>
-            <a
-              href="./login.html"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-            >
-              <i class="hidden md:block fa-solid fa-user fa-lg"></i>
-              <span class="hidden md:block">Account</span>
-            </a>
-            <button
-              onclick="toggleDarkMode()"
-              class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-            >
-              <img
-                src="./Logo/light.png"
-                alt="light"
-                class="h-6 w-6 hidden dark:block"
-              />
-              <img
-                src="./Logo/night-mode.png"
-                alt="night-mode"
-                class="h-5 w-5 block dark:hidden"
-              />
-            </button>
-          </div>
         </div>
       </div>
-      <hr class="text-gray-200 dark:text-gray-400 shadow-sm shadow-grey-400" />
-      <!-- 2nd nav  -->
-      <nav class="mx-auto px-2 md:px-4 lg:px-6 py-1">
-        <div class="flex justify-between h-14">
-          <div class="flex items-center">
-            <div class="relative inline-block text-left">
-              <button
-                id="category-button"
-                type="button"
-                class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
-              >
-                Categories
-                <i class="fa-solid fa-caret-down h-5 w-5"></i>
-              </button>
-              <div
-                id="category-dropdown"
-                class="hidden origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10"
-              >
-                <div class="py-1" role="menu" aria-orientation="vertical">
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >APPLE</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >SAMSUNG</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >GOOGLE</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >OPPO</a
-                  >
+      <hr class="text-gray-200 dark:text-gray-400" />
+      <!-- 2nd nav -->
+      <div class="mx-auto max-w-screen-xl px-6 xl:px-0">
+        <nav class="mx-auto py-1">
+          <div class="flex justify-between h-14">
+            <div class="flex items-center">
+              <div class="relative inline-block text-left">
+                <button
+                  id="category-button"
+                  type="button"
+                  class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
+                >
+                  Categories
+                  <i class="fa-solid fa-caret-down h-5 w-5"></i>
+                </button>
+                <div
+                  id="category-dropdown"
+                  class="hidden origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10"
+                >
+                  <div class="py-1" role="menu" aria-orientation="vertical">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      role="menuitem"
+                      >APPLE</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      role="menuitem"
+                      >SAMSUNG</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      role="menuitem"
+                      >GOOGLE</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
+                      role="menuitem"
+                      >OPPO</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="hidden md:flex items-center justify-end flex-1">
-            <div class="flex gap-6 md:gap-8 lg:gap-10">
-              <a
-                href="./index.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+            <div class="hidden md:flex items-center justify-end flex-1">
+              <div class="flex gap-6 md:gap-8 lg:gap-10">
+                <a
+                  href="./index.html"
+                  class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <i class="fa-solid fa-house fa-sm"></i>
+                  Home
+                </a>
+                <a
+                  href="./product.html"
+                  class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                  ><i class="fa-solid fa-mobile-screen-button fa-md"></i>
+                  Products</a
+                >
+                <a
+                  href="./about.html"
+                  class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <i class="fa-solid fa-circle-info fa-md"></i>About Us</a
+                >
+                <a
+                  href="./contact.html"
+                  class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <i class="fa-solid fa-envelope fa-md"></i>Contact Us</a
+                >
+              </div>
+            </div>
+
+            <!-- Menu on mobile -->
+            <div class="flex items-center md:hidden">
+              <button
+                id="mobile-menu-button"
+                type="button"
+                class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
               >
-                <i class="fa-solid fa-house fa-lg"></i>
-                Home
-              </a>
-              <a
-                href="./product.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                ><i class="fa-solid fa-mobile-screen-button fa-lg"></i>
-                Products</a
-              >
-              <a
-                href="./about.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-circle-info fa-lg"></i>About Us</a
-              >
-              <a
-                href="./contact.html"
-                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a
-              >
+                <span class="sr-only">Open main menu</span>
+                <i class="fa-solid fa-bars"></i>
+              </button>
             </div>
           </div>
+        </nav>
+      </div>
 
-          <!-- Menu on mobile -->
-          <div class="flex items-center md:hidden">
-            <button
-              id="mobile-menu-button"
-              type="button"
-              class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span class="sr-only">Open main menu</span>
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </div>
-      </nav>
-
-      <!-- mobile menu  -->
+      <!-- mobile menu -->
       <div
         id="mobile-menu"
         class="hidden md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-4 border-t border-gray-200 dark:border-gray-700 z-40"
@@ -251,30 +260,32 @@
           href="./index.html"
           class="block text-blue-900 dark:text-white font-medium hover:underline"
         >
-          <i class="fa-solid fa-house mr-2"></i>Home
+          <i class="fa-solid fa-house mr-2"></i> Home
         </a>
         <a
           href="./product.html"
           class="block text-blue-900 dark:text-white font-medium hover:underline"
         >
-          <i class="fa-solid fa-mobile-screen-button mr-2"></i>Products
+          <i class="fa-solid fa-mobile-screen-button mr-2"></i> Products
         </a>
         <a
           href="./about.html"
           class="block text-blue-900 dark:text-white font-medium hover:underline"
         >
-          <i class="fa-solid fa-circle-info mr-2"></i>About Us
+          <i class="fa-solid fa-circle-info mr-2"></i> About Us
         </a>
         <a
           href="./contact.html"
           class="block text-blue-900 dark:text-white font-medium hover:underline"
         >
-          <i class="fa-solid fa-circle-info mr-2"></i>Contact US
+          <i class="fa-solid fa-circle-info mr-2"></i> Contact US
         </a>
       </div>
     </header>
     <!-- Page Header -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-8">
+    <section
+      class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12"
+    >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
         <p class="text-xl opacity-90 max-w-2xl mx-auto">
@@ -285,9 +296,9 @@
     </section>
     <!-- Contact Content -->
     <section
-      class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300"
+      class="py-24 bg-white dark:bg-gray-800 transition-colors duration-300"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <!-- Contact Information -->
           <div class="space-y-8">
@@ -782,12 +793,12 @@
     <footer
       class="bg-white dark:bg-slate-900 text-gray-800 dark:text-white transition-colors duration-300"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Main Footer Content -->
-        <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <!-- Company Info -->
-          <div class="space-y-4">
-            <a href="./index.html" class="flex items-center">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+        <!-- Top Section: Logo + Navigation + Payment -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+          <!-- Logo & Description -->
+          <div>
+            <a href="./index.html" class="flex items-center mb-3">
               <img
                 src="./Logo/ProZone.png"
                 alt="Pro-Zone Logo"
@@ -796,135 +807,172 @@
               <span
                 class="text-xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold"
                 >PRO-ZONE</span
-              ></a
-            >
-            <p class="text-gray-600 dark:text-gray-300 text-sm">
+              >
+            </a>
+            <p class="text-md text-gray-600 dark:text-gray-300 pt-2">
               Your trusted partner for premium tech products and exceptional
-              service.
+              service. Quality guaranteed with fast delivery and comprehensive
+              warranty.
             </p>
           </div>
 
-          <!-- Quick Links -->
-          <div class="space-y-4">
-            <h3
-              class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider"
-            >
-              Quick Links
-            </h3>
-            <ul class="space-y-3">
+          <!-- Navigation Menu -->
+          <div class="flex flex-col justify-between">
+            <ul class="space-y-2 md:space-y-4 ps-0 md:ps-12">
+              <p class="text-lg font-medium">Menu</p>
               <li>
-                <a
-                  href="index.html"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Home</a
-                >
+                <a href="./index.html" class="hover:text-indigo-600">Home</a>
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
+                <a href="./product.html" class="hover:text-indigo-600"
                   >Products</a
                 >
               </li>
               <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
+                <a href="./about.html" class="hover:text-indigo-600"
                   >About Us</a
                 >
               </li>
               <li>
-                <a
-                  href="contact.html"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Contact</a
+                <a href="./contact.html" class="hover:text-indigo-600"
+                  >Contact Us</a
                 >
               </li>
             </ul>
           </div>
 
-          <!-- Support -->
-          <div class="space-y-4">
-            <h3
-              class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider"
-            >
-              Support
-            </h3>
-            <ul class="space-y-3">
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Help Center</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Returns</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Shipping Info</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200"
-                  >Warranty</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Contact Info -->
-          <div class="space-y-4">
-            <h3
-              class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider"
-            >
-              Contact Info
-            </h3>
-            <div class="space-y-3 text-sm">
-              <p class="text-gray-600 dark:text-gray-300">
-                123 Tech Street<br />Stueung Mean Chey, Phnom Penh.
-              </p>
-              <p class="text-gray-600 dark:text-gray-300">
-                Phone: +855 10399903
-              </p>
-              <p class="text-gray-600 dark:text-gray-300">
-                Email: support@prozone.com
-              </p>
+          <!-- Payment Methods -->
+          <div>
+            <p class="text-lg font-medium pb-5">We accept</p>
+            <div class="flex flex-wrap gap-2">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+                alt="Visa"
+                class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                alt="Mastercard"
+                class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border"
+              />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+                alt="PayPal"
+                class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border"
+              />
+              <img
+                src="../img/Home/KHQR_Logo.png"
+                alt="KHQR"
+                class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border"
+              />
+              <img
+                src="../img/Home/WingHome.png"
+                alt="WingBank"
+                class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border"
+              />
+            </div>
+            <div class="flex items-center gap-4 pt-7">
+              <a href="#"
+                ><img src="../img/app-store.svg" alt="App Store" class="h-11"
+              /></a>
+              <a href="#"
+                ><img
+                  src="../img/google-play.svg"
+                  alt="Google Play"
+                  class="h-11"
+              /></a>
             </div>
           </div>
         </div>
 
-        <!-- Bottom Section -->
-        <div class="border-t border-gray-200 dark:border-slate-800 pt-8 pb-8">
-          <div
-            class="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0"
-          >
-            <p class="text-sm text-gray-600 dark:text-gray-300">
-              &copy; 2025 Pro_Zone. All rights reserved.
+        <footer
+          class="bg-white dark:bg-slate-900 text-gray-800 dark:text-white transition-colors duration-300"
+        >
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <!-- Social + Policy + Secure -->
+            <div
+              class="flex flex-col md:flex-row md:justify-between md:items-center border-t border-gray-200 dark:border-slate-800 space-y-0 md:space-x-4 pt-6 pb-3"
+            >
+              <!-- Social Icons -->
+              <div class="flex justify-center md:justify-start space-x-4">
+                <a
+                  href="#"
+                  class="text-blue-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
+                >
+                  <span class="sr-only">Facebook</span>
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-pink-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
+                >
+                  <span class="sr-only">Instagram</span>
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-blue-800 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
+                >
+                  <span class="sr-only">Telegram</span>
+                  <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a
+                  href="#"
+                  class="text-red-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg"
+                >
+                  <span class="sr-only">YouTube</span>
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
+
+              <!-- Policy Links -->
+              <div
+                class="flex flex-col items-center md:flex-row text-sm text-gray-600 dark:text-gray-300 space-y-2 md:space-y-0 md:space-x-6"
+              >
+                <a
+                  href="#"
+                  class="hover:text-gray-900 dark:hover:text-white transition"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="#"
+                  class="hover:text-gray-900 dark:hover:text-white transition"
+                  >Terms of Service</a
+                >
+                <a
+                  href="#"
+                  class="hover:text-gray-900 dark:hover:text-white transition"
+                  >Cookie Policy</a
+                >
+              </div>
+
+              <!-- Secure Shopping -->
+              <div
+                class="flex justify-center md:justify-end items-center space-x-2 text-sm text-blue-800 dark:text-gray-300 pt-2 md:pt-0"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  />
+                </svg>
+                <span class="">Secure Shopping</span>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <p class="text-center text-sm text-gray-600 dark:text-gray-300">
+              &copy; 2025 Pro-Zone. All rights reserved.
             </p>
-            <div class="flex space-x-6 text-sm">
-              <a
-                href="#"
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-                >Privacy Policy</a
-              >
-              <a
-                href="#"
-                class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
-                >Terms of Service</a
-              >
-            </div>
           </div>
-        </div>
+        </footer>
       </div>
     </footer>
 

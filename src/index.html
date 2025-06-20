@@ -1,188 +1,157 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pro-Zone Phone Shop</title>
-    <link rel="icon" type="image/x-icon" href="./Logo/ProZone.png">
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
-</style>
-    <link rel="stylesheet" href="output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <script src="../node_modules/preline/preline.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const isDark = localStorage.getItem("darkMode") === "true";
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    }
 
-    const categoryBtn = document.getElementById("category-button");
-    const categoryDropdown = document.getElementById("category-dropdown");
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pro-Zone Phone Shop</title>
+  <link rel="icon" type="image/x-icon" href="./Logo/ProZone.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap');
+  </style>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="../node_modules/preline/preline.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const isDark = localStorage.getItem("darkMode") === "true";
+      if (isDark) {
+        document.documentElement.classList.add("dark");
+      }
 
-    if (categoryBtn && categoryDropdown) {
-      categoryBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // prevent event bubbling
-        categoryDropdown.classList.toggle("hidden");
-      });
+      const categoryBtn = document.getElementById("category-button");
+      const categoryDropdown = document.getElementById("category-dropdown");
 
-      document.addEventListener("click", (e) => {
-        if (
-          !categoryBtn.contains(e.target) &&
-          !categoryDropdown.contains(e.target)
-        ) {
-          categoryDropdown.classList.add("hidden");
-        }
-      });
-    }
+      if (categoryBtn && categoryDropdown) {
+        categoryBtn.addEventListener("click", (e) => {
+          e.stopPropagation(); // prevent event bubbling
+          categoryDropdown.classList.toggle("hidden");
+        });
 
-    const mobileMenuBtn = document.getElementById("mobile-menu-button");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    }
-  });
-  function toggleDarkMode() {
-    document.documentElement.classList.toggle("dark");
-    const isDark = document.documentElement.classList.contains("dark");
-    localStorage.setItem("darkMode", isDark);
-  }
-</script>
-
-  </head>
-
-  <body class="max-w-[1444px] mx-auto">
-    <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
-      <div class="bg-blue-900 px-2 md:px-4 lg:px-6 py-4 mx-auto">
-        <div
-          class="mx-auto flex justify-between items-center text-[14px] md:text-lg"
-        >
-          <h2 class="font-bold text-[#F4C500]">Mid-Year Sale</h2>
-          <h2
-            class="font-bold text-[#F4C500] animate-[scale_1.5s_ease-in-out_infinite]"
-          >
-            15% OFF
-          </h2>
-          <button
-            class="font-bold p-1 md:px-4 md:py-1 rounded-md bg-[#F4C500] hover:bg-yellow-300"
-          >
-            Buy Now
-          </button>
-        </div>
-
-        <style>
-          @keyframes scale {
-            0%,
-            100% {
-              transform: scale(1);
-            }
-
-            50% {
-              transform: scale(1.1);
-            }
+        document.addEventListener("click", (e) => {
+          if (
+            !categoryBtn.contains(e.target) &&
+            !categoryDropdown.contains(e.target)
+          ) {
+            categoryDropdown.classList.add("hidden");
           }
-        </style>
+        });
+      }
+
+      const mobileMenuBtn = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+    });
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("darkMode", isDark);
+    }
+  </script>
+
+  <style>
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.25);
+      }
+    }
+  </style>
+
+</head>
+
+<body class="mx-auto">
+  <header class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+    <div class="bg-blue-600 dark:bg-blue-900 px-6 xl:px-0 py-4 mx-auto ">
+      <div class="mx-auto max-w-screen-xl flex justify-between items-center text-[14px] md:text-lg">
+        <h2 class="font-bold text-white">Mid-Year Sale</h2>
+        <h2 class="font-bold animate-[pulse_1.5s_ease-in-out_infinite] text-white">
+          15% OFF
+        </h2>
+        <div class="bg-blue-100 px-3 py-1.5 rounded-md">
+          <p class="text-blue-800 text-sm font-bold">Buy Now</p>
+        </div>
       </div>
-      <!-- 1st nav -->
-      <div class="mx-auto px-2 md:px-4 lg:px-6 py-1">
-        <div class="flex justify-between items-center h-16">
+    </div>
+    <!-- 1st nav -->
+    <div class="mx-auto px-6 xl:px-0 py-4">
+      <div class="align-middle">
+        <div class="flex justify-between items-center h-16 max-w-screen-xl mx-auto">
           <div class="flex-shrink-0 flex items-center">
             <a href="#" class="flex items-center gap-4">
-              <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-12" />
-              <span class="text-3xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span>
+              <img src="./Logo/ProZone.png" alt="Pro-Zone-logo" class="w-10" />
+              <span class="text-2xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span>
             </a>
           </div>
-          <!-- search  -->
-<div class="flex-1 max-w-xl mx-8 hidden lg:block">
-    <div class="flex">
-        <input type="search" class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" placeholder="Search">
-        <button type="submit" class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Search
-        </button>
-    </div>
-</div>
+          <!-- search -->
+          <div class="flex-1 max-w-xl mx-8 hidden lg:block">
+            <div class="flex">
+              <input type="search"
+                class="w-full px-4 py-2 text-gray-700 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+                placeholder="Search">
+              <button type="submit"
+                class="px-6 py-2 text-white bg-blue-900 rounded-r-md hover:bg-blue-900 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-900 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Search
+              </button>
+            </div>
+          </div>
           <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
-            <a
-              href="#"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              ><i class="fa-solid fa-cart-shopping fa-lg"></i>
+            <a href="#"
+              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+              <i class="fa-solid fa-cart-shopping fa-md"></i>
               <span class="hidden md:block">Cart</span>
             </a>
-            <a
-              href="./login.html"
-              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-            >
-              <i class="hidden md:block fa-solid fa-user fa-lg"></i>
+            <a href="./login.html"
+              class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+              <i class="hidden md:block fa-solid fa-user fa-md"></i>
               <span class="hidden md:block">Account</span>
             </a>
-            <button
-              onclick="toggleDarkMode()"
-              class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-            >
-              <img
-                src="./Logo/light.png"
-                alt="light"
-                class="h-6 w-6 hidden dark:block"
-              />
-              <img
-                src="./Logo/night-mode.png"
-                alt="night-mode"
-                class="h-5 w-5 block dark:hidden"
-              />
+            <button onclick="toggleDarkMode()"
+              class="rounded-full text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+              <img src="./Logo/light.png" alt="light" class="h-5 w-5 hidden dark:block" />
+              <img src="./Logo/night-mode.png" alt="night-mode" class="h-4 w-4 block dark:hidden" />
             </button>
           </div>
         </div>
       </div>
-      <hr class="text-gray-200 dark:text-gray-400 shadow-sm shadow-grey-400" />
-      <!-- 2nd nav  -->
-      <nav class="mx-auto px-2 md:px-4 lg:px-6 py-1">
+    </div>
+    <hr class="text-gray-200 dark:text-gray-400" />
+    <!-- 2nd nav -->
+    <div class="mx-auto max-w-screen-xl px-6 xl:px-0">
+      <nav class="mx-auto py-1">
         <div class="flex justify-between h-14">
           <div class="flex items-center">
             <div class="relative inline-block text-left">
-              <button
-                id="category-button"
-                type="button"
-                class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none"
-              >
+              <button id="category-button" type="button"
+                class="inline-flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md focus:outline-none">
                 Categories
                 <i class="fa-solid fa-caret-down h-5 w-5"></i>
               </button>
-              <div
-                id="category-dropdown"
-                class="hidden origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10"
-              >
+              <div id="category-dropdown"
+                class="hidden origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white dark:bg-gray-700 ring-1 ring-black ring-opacity-5 z-10">
                 <div class="py-1" role="menu" aria-orientation="vertical">
-                  <a
-                    href="#"
+                  <a href="#"
                     class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >APPLE</a
-                  >
-                  <a
-                    href="#"
+                    role="menuitem">APPLE</a>
+                  <a href="#"
                     class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >SAMSUNG</a
-                  >
-                  <a
-                    href="#"
+                    role="menuitem">SAMSUNG</a>
+                  <a href="#"
                     class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >GOOGLE</a
-                  >
-                  <a
-                    href="#"
+                    role="menuitem">GOOGLE</a>
+                  <a href="#"
                     class="block px-4 py-2 text-sm text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
-                    role="menuitem"
-                    >OPPO</a
-                  >
+                    role="menuitem">OPPO</a>
                 </div>
               </div>
             </div>
@@ -190,94 +159,72 @@
 
           <div class="hidden md:flex items-center justify-end flex-1">
             <div class="flex gap-6 md:gap-8 lg:gap-10">
-              <a
-                href="./index.html"
-                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-house fa-lg"></i>
+              <a href="./index.html"
+                class="flex items-center text-md font-medium gap-2 px-4 py-2 bg-gray-100 dark:bg-blue-950 rounded-xl text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+                <i class="fa-solid fa-house fa-sm"></i>
                 Home
               </a>
-              <a
-                href="./product.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                ><i class="fa-solid fa-mobile-screen-button fa-lg"></i>
-                Products</a
-              >
-              <a
-                href="./about.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-circle-info fa-lg"></i>About Us</a
-              >
-              <a
-                href="./contact.html"
-                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
-              >
-                <i class="fa-solid fa-envelope fa-lg"></i>Contact Us</a
-              >
+              <a href="./product.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"><i
+                  class="fa-solid fa-mobile-screen-button fa-md"></i>
+                Products</a>
+              <a href="./about.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+                <i class="fa-solid fa-circle-info fa-md"></i>About Us</a>
+              <a href="./contact.html"
+                class="flex items-center text-md font-medium gap-2 text-blue-900 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+                <i class="fa-solid fa-envelope fa-md"></i>Contact Us</a>
             </div>
           </div>
 
           <!-- Menu on mobile -->
           <div class="flex items-center md:hidden">
-                      <button id="mobile-menu-button" type="button"
-            class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
-            aria-controls="mobile-menu" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <i class="fa-solid fa-bars"></i>
-          </button>
+            <button id="mobile-menu-button" type="button"
+              class="relative z-50 inline-flex items-center justify-center rounded-md text-blue-900 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none"
+              aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <i class="fa-solid fa-bars"></i>
+            </button>
           </div>
         </div>
       </nav>
+    </div>
 
-      <!-- mobile menu  -->
+    <!-- mobile menu -->
     <div id="mobile-menu"
       class="hidden md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-4 border-t border-gray-200 dark:border-gray-700 z-40">
       <a href="./index.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
-        <i class="fa-solid fa-house mr-2"></i>Home
+        <i class="fa-solid fa-house mr-2"></i> Home
       </a>
       <a href="./product.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
-        <i class="fa-solid fa-mobile-screen-button mr-2"></i>Products
+        <i class="fa-solid fa-mobile-screen-button mr-2"></i> Products
       </a>
       <a href="./about.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
-        <i class="fa-solid fa-circle-info mr-2"></i>About Us
+        <i class="fa-solid fa-circle-info mr-2"></i> About Us
       </a>
       <a href="./contact.html" class="block text-blue-900 dark:text-white font-medium hover:underline">
-        <i class="fa-solid fa-circle-info mr-2"></i>Contact US
+        <i class="fa-solid fa-circle-info mr-2"></i> Contact US
       </a>
     </div>
-
-    </header>
-    <section
-      data-hs-carousel='{
+  </header>
+  <section data-hs-carousel='{
     "loadingClasses": "opacity-0",
     "dotsItemClasses": "hs-carousel-active:bg-blue-700 hs-carousel-active:border-blue-700 size-3 border border-gray-400 rounded-full cursor-pointer dark:border-neutral-600 dark:hs-carousel-active:bg-blue-500 dark:hs-carousel-active:border-blue-500",
     "isAutoPlay": true
-  }'
-      class="relative"
-    >
-      <div
-        class="hs-carousel relative overflow-hidden xl:mx-auto min-h-100 bg-white"
-      >
+  }' class="relative bg-gray-100 dark:bg-neutral-900 ">
+
+    <div class="mx-auto max-w-screen-xl ">
+      <div class="hs-carousel relative overflow-hidden xl:mx-auto min-h-100 bg-white">
         <div
-          class="hs-carousel-body top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0"
-        >
+          class="hs-carousel-body top-0 bottom-0 start-0 flex flex-nowrap transition-transform duration-700 opacity-0">
           <div class="hs-carousel-slide">
-            <div
-              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
-            >
-              <div
-                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
-              >
-                <div
-                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
-                >
+            <div class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900">
+              <div class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0">
+                <div class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white">
                   <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
                     iPhone 16 Pro Series
                   </h2>
-                  <p
-                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
-                  >
+                  <p class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100">
                     iPhone 16 Pro comes with a larger screen of 6.3" and 16 Pro
                     Max of up to 6.9". <br />The edge of the screen is shorter
                     than before. Equipped with 48MP Fusion + 48MP ultra wide
@@ -288,617 +235,528 @@
                     colors: Desert Titanium, Natural Titanium, Black Titanium
                     and White Titanium
                   </p>
-                  <a class="delay-4" href="#"
-                    ><button
-                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
-                    >
+                  <a class="delay-4" href="#"><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center">
                       <span>AVAILABLE NOW</span> <i class="pl-1">></i>
-                    </button></a
-                  >
+                    </button></a>
                 </div>
                 <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
-                  <img
-                    src="../img/Home/iphone-16-pro-and-16-pro-max.png"
-                    alt="Iphone 16Pro and Iphone 16 Pro Max"
-                  />
+                  <img src="../img/Home/iphone-16-pro-and-16-pro-max.png" alt="Iphone 16Pro and Iphone 16 Pro Max" />
                 </div>
               </div>
             </div>
           </div>
           <div class="hs-carousel-slide">
-            <div
-              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
-            >
-              <div
-                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
-              >
-                <div
-                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
-                >
+            <div class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900">
+              <div class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0">
+                <div class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white">
                   <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
                     Galaxy S25 Ultra - AI
                   </h2>
-                  <p
-                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
-                  >
-                   Sleek. Strong. Stunning.<br />Galaxy AI takes
-                            innovation to the next level.Galaxy S25 Ultra,
-                            designed with an upgraded titanium exterior, a
-                            built-in S Pen, and an impressive 250MP wide-angle
-                            camera paired with 4x Optical Quality Zoom for
-                            unmatched photography. Powered by the advanced
-                            Gemini AI, it enables groundbreaking features like
-                            Circle to Search with Google, redefining what's
-                            possible.Available in four stunning colours:
-                            Titanium Silver Blue, Titanium Black, Titanium White
-                            Silver , Titanium Gray , Titanium Jetblack and
-                            Titanium Jadegreen.
+                  <p class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100">
+                    Sleek. Strong. Stunning.<br />Galaxy AI takes
+                    innovation to the next level.Galaxy S25 Ultra,
+                    designed with an upgraded titanium exterior, a
+                    built-in S Pen, and an impressive 250MP wide-angle
+                    camera paired with 4x Optical Quality Zoom for
+                    unmatched photography. Powered by the advanced
+                    Gemini AI, it enables groundbreaking features like
+                    Circle to Search with Google, redefining what's
+                    possible.Available in four stunning colours:
+                    Titanium Silver Blue, Titanium Black, Titanium White
+                    Silver , Titanium Gray , Titanium Jetblack and
+                    Titanium Jadegreen.
                   </p>
-                  <a class="delay-4" href="#"
-                    ><button
-                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
-                    >
+                  <a class="delay-4" href="#"><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center">
                       <span>AVAILABLE NOW</span> <i class="pl-1">></i>
-                    </button></a
-                  >
+                    </button></a>
                 </div>
                 <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
-                  <img
-                    src="../img/Home/galaxy-s25-ultra-all-colors.png"
-                    alt="Iphone 16Pro and Iphone 16 Pro Max"
-                  />
+                  <img src="../img/Home/galaxy-s25-ultra-all-colors.png" alt="Iphone 16Pro and Iphone 16 Pro Max" />
                 </div>
               </div>
             </div>
           </div>
           <div class="hs-carousel-slide">
-            <div
-              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
-            >
-              <div
-                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
-              >
-                <div
-                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
-                >
+            <div class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900">
+              <div class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0">
+                <div class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white">
                   <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
                     Samsung Galaxy S25
                   </h2>
-                  <p
-                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
-                  >
+                  <p class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100">
                     Sleek. Smart. Powerful.<br />The Galaxy S25 and S25
-                            Plus bring cutting-edge performance with Snapdragon
-                            8 Elite, Dynamic AMOLED 2X displays, and Galaxy AI
-                            for smarter features like Circle to Search.<br />Capture
-every detail with a 50MP main camera and enjoy
-                            all-day power with 4000mAh (S25) or 4900mAh (S25Plus). Built with Gorilla Glass Victus 2 and
-                            available in Icy Blue, Mint, Navy, Silver Shadow.
+                    Plus bring cutting-edge performance with Snapdragon
+                    8 Elite, Dynamic AMOLED 2X displays, and Galaxy AI
+                    for smarter features like Circle to Search.<br />Capture
+                    every detail with a 50MP main camera and enjoy
+                    all-day power with 4000mAh (S25) or 4900mAh (S25Plus). Built with Gorilla Glass Victus 2 and
+                    available in Icy Blue, Mint, Navy, Silver Shadow.
                   </p>
-                  <a class="delay-4" href="#"
-                    ><button
-                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
-                    >
+                  <a class="delay-4" href="#"><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center">
                       <span>AVAILABLE NOW</span> <i class="pl-1">></i>
-                    </button></a
-                  >
+                    </button></a>
                 </div>
                 <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
-                  <img
-                    src="../img/Home/galaxy-s25-and-s25-plus.png"
-                    alt="Iphone 16Pro and Iphone 16 Pro Max"
-                  />
+                  <img src="../img/Home/galaxy-s25-and-s25-plus.png" alt="Iphone 16Pro and Iphone 16 Pro Max" />
                 </div>
               </div>
             </div>
           </div>
           <div class="hs-carousel-slide">
-            <div
-              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
-            >
-              <div
-                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
-              >
-                <div
-                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
-                >
+            <div class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900">
+              <div class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0">
+                <div class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white">
                   <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
                     Google Pixel 9 Series
                   </h2>
-                  <p
-                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
-                  >
+                  <p class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100">
                     The new Pixel 9 series, New AI, offers a range of
-                            advanced features including a 6.3-inch Full HD+
-                            display, Chip Tensor G4 and Gorilla Glass Victus 2
-                            protection, dual 50 MP main and 48 MP ultrawide
-                            cameras, and 4K video recording. The Pro models add
-                            a 48 MP 5x telephoto lens and the Pro XL has a
-                            battery of 5060 mAh.Comes in 4 stunning colours.From the Pixel 9 & 9 Pro to the 9 Pro XL & 9 Pro Fold, every model is built to impress. And with the Google Pixel 9a just around the corner, the lineup just keeps getting better!
+                    advanced features including a 6.3-inch Full HD+
+                    display, Chip Tensor G4 and Gorilla Glass Victus 2
+                    protection, dual 50 MP main and 48 MP ultrawide
+                    cameras, and 4K video recording. The Pro models add
+                    a 48 MP 5x telephoto lens and the Pro XL has a
+                    battery of 5060 mAh.Comes in 4 stunning colours.From the Pixel 9 & 9 Pro to the 9 Pro XL & 9 Pro
+                    Fold, every model is built to impress. And with the Google Pixel 9a just around the corner, the
+                    lineup just keeps getting better!
                   </p>
-                  <a class="delay-4" href="#"
-                    ><button
-                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
-                    >
+                  <a class="delay-4" href="#"><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center">
                       <span>AVAILABLE NOW</span> <i class="pl-1">></i>
-                    </button></a
-                  >
+                    </button></a>
                 </div>
                 <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
-                  <img
-                    src="../img/Home/google-pixel-9-series.png" width="100%"
-                    alt="Iphone 16Pro and Iphone 16 Pro Max"
-                  />
+                  <img src="../img/Home/google-pixel-9-series.png" width="100%"
+                    alt="Iphone 16Pro and Iphone 16 Pro Max" />
                 </div>
               </div>
             </div>
           </div>
           <div class="hs-carousel-slide">
-            <div
-              class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900"
-            >
-              <div
-                class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0"
-              >
-                <div
-                  class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white"
-                >
+            <div class="h-full text-center md:text-start bg-gray-100 p-9 md:p-16 lg:p-18 dark:bg-neutral-900">
+              <div class="flex flex-col-reverse md:grid grid-cols-2 md:gap-2 lg:gap-0">
+                <div class="flex flex-col gap-4 md:gap-7.5 text-gray-900 dark:text-white">
                   <h2 class="delay-1 font-bold text-3xl md:text-[32px] lg:text-5xl text-blue-900 dark:text-white">
                     Galaxy S25 Ultra - AI
                   </h2>
-                  <p
-                    class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100"
-                  >
-                   Sleek. Strong. Stunning.<br />Galaxy AI takes
-                            innovation to the next level.Galaxy S25 Ultra,
-                            designed with an upgraded titanium exterior, a
-                            built-in S Pen, and an impressive 250MP wide-angle
-                            camera paired with 4x Optical Quality Zoom for
-                            unmatched photography. Powered by the advanced
-                            Gemini AI, it enables groundbreaking features like
-                            Circle to Search with Google, redefining what’s
-                            possible.Available in four stunning colours:
-                            Titanium Silver Blue, Titanium Black, Titanium White
-                            Silver , Titanium Gray , Titanium Jetblack and
-                            Titanium Jadegreen.
+                  <p class="line-clamp-3 md:line-clamp-5 lg:line-clamp-6 delay-100">
+                    Sleek. Strong. Stunning.<br />Galaxy AI takes
+                    innovation to the next level.Galaxy S25 Ultra,
+                    designed with an upgraded titanium exterior, a
+                    built-in S Pen, and an impressive 250MP wide-angle
+                    camera paired with 4x Optical Quality Zoom for
+                    unmatched photography. Powered by the advanced
+                    Gemini AI, it enables groundbreaking features like
+                    Circle to Search with Google, redefining what’s
+                    possible.Available in four stunning colours:
+                    Titanium Silver Blue, Titanium Black, Titanium White
+                    Silver , Titanium Gray , Titanium Jetblack and
+                    Titanium Jadegreen.
                   </p>
-                  <a class="delay-4" href="#"
-                    ><button
-                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center"
-                    >
+                  <a class="delay-4" href="#"><button
+                      class="bg-blue-900 p-2 md:p-4 rounded-lg text-white font-semibold content-center justify-center">
                       <span>AVAILABLE NOW</span> <i class="pl-1">></i>
-                    </button></a
-                  >
+                    </button></a>
                 </div>
                 <div class="py-4 md:py-0 pb-8 md:pb-0 md:pl-4 lg:pl-12 justify-items-center content-center">
-                  <img
-                    src="../img/Home/galaxy-s25-ultra-all-colors.png"
-                    alt="Iphone 16Pro and Iphone 16 Pro Max"
-                  />
+                  <img src="../img/Home/galaxy-s25-ultra-all-colors.png" alt="Iphone 16Pro and Iphone 16 Pro Max" />
                 </div>
               </div>
             </div>
           </div>
-          </div>
         </div>
+
+        <button type="button"
+          class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+          <span class="text-2xl" aria-hidden="true">
+            <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </span>
+          <span class="sr-only">Previous</span>
+        </button>
+        <button type="button"
+          class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+          <span class="sr-only">Next</span>
+          <span class="text-2xl" aria-hidden="true">
+            <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </span>
+        </button>
       </div>
 
-      <button
-        type="button"
-        class="hs-carousel-prev hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 start-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-s-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
-      >
-        <span class="text-2xl" aria-hidden="true">
-          <svg
-            class="shrink-0 size-5"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="m15 18-6-6 6-6"></path>
-          </svg>
-        </span>
-        <span class="sr-only">Previous</span>
-      </button>
-      <button
-        type="button"
-        class="hs-carousel-next hs-carousel-disabled:opacity-50 hs-carousel-disabled:pointer-events-none absolute inset-y-0 end-0 inline-flex justify-center items-center w-11.5 h-full text-gray-800 hover:bg-gray-800/10 focus:outline-hidden focus:bg-gray-800/10 rounded-e-lg dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
-      >
-        <span class="sr-only">Next</span>
-        <span class="text-2xl" aria-hidden="true">
-          <svg
-            class="shrink-0 size-5"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="m9 18 6-6-6-6"></path>
-          </svg>
-        </span>
-      </button>
-
-      <div
-        class="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 gap-x-2"
-      ></div>
-      <!-- why us -->
-    </section>
-     <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
-        <div class="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Why Choose iStore?</h2>
-                <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                    We provide the best shopping experience with premium products and exceptional service.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fast Delivery</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Get your products delivered within 24 hours with our express shipping service.
-                    </p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Warranty Protection</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        All products come with comprehensive warranty and 24/7 customer support.
-                    </p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
-                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Free Shipping</h3>
-                    <p class="text-gray-600 dark:text-gray-300">
-                        Enjoy free shipping on all orders above $99. No hidden costs or fees.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- feature Pro -->
-
-<section class="py-12 bg-gray-50 dark:bg-gray-900">
-  <div class="container mx-auto px-4 md:px-5 lg:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Products</h2>
-      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover our latest and most popular smartphones from top brands</p>
     </div>
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-8">
-      <!-- iPhone 16 Pro Max -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/16 pro max home.png" alt="iPhone 16 Pro Max" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro Max</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The ultimate iPhone with the largest display and longest battery life.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$1,199</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
-          </div>
-        </div>
+
+    </div>
+    <div class="hs-carousel-pagination flex justify-center absolute bottom-3 start-0 end-0 gap-x-2"></div>
+    <!-- why us -->
+  </section>
+  <section class="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
+    <div class="p-6 xl:p-0 mx-auto max-w-screen-xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Why Choose Pro-Zone?</h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          We provide the best shopping experience with premium products and exceptional service.
+        </p>
       </div>
-      
-      <!-- iPhone 16 Pro -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/iPhone_16_ProHome.png" alt="iPhone 16 Pro" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Pro camera system and powerful performance in a perfect size.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div
+          class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
           </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fast Delivery</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Get your products delivered within 24 hours with our express shipping service.
+          </p>
         </div>
-      </div>
-      
-      <!-- Samsung Galaxy S25 Ultra -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/s25 u home.png" alt="Samsung Galaxy S25 Ultra" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Ultra</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Revolutionary camera system with advanced AI capabilities.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$1,299</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+
+        <!-- Feature 2 -->
+        <div
+          class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
           </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Warranty Protection</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            All products come with comprehensive warranty and 24/7 customer support.
+          </p>
         </div>
-      </div>
-      
-      <!-- Samsung Galaxy S25 Plus -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/s25 + home.png" alt="Samsung Galaxy S25 Plus" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Plus</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Larger screen and battery in a sleek, premium design.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
+
+        <!-- Feature 3 -->
+        <div
+          class="text-center p-6 bg-gray-50 dark:bg-gray-700 rounded-xl hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+          <div
+            class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+            </svg>
           </div>
-        </div>
-      </div>
-      
-      <!-- Samsung Galaxy S25 Edge -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/s25 edge home.png" alt="Samsung Galaxy S25 Edge" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Edge</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Curved edge display with immersive viewing experience.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Google Pixel 9 Pro -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/pixel 9 pro.png" alt="Google Pixel 9 Pro" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The best of Google AI with an exceptional camera experience.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Google Pixel 9 Pro XL -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/pixel 9 pro xl.png" alt="Google Pixel 9 Pro XL" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro XL</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Largest Pixel display with all-day battery life and AI features.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-      
-      <!-- OPPO Reno 14 Pro -->
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
-        <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <img src="../img/Home/reno14.png" alt="OPPO Reno 14 Pro" class="h-40 w-auto object-contain" />
-        </div>
-        <div class="p-6 flex flex-col flex-grow">
-          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">OPPO Reno 14 Pro</h3>
-          <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Stunning design with advanced camera system and fast charging.</p>
-          <div class="mt-4 flex items-center justify-between">
-            <span class="text-xl font-bold text-gray-900 dark:text-white">$799</span>
-            <button class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add to Cart</button>
-          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Free Shipping</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Enjoy free shipping on all orders above $99. No hidden costs or fees.
+          </p>
         </div>
       </div>
     </div>
-  </div>
-</section>
-    <!-- news  -->
-      <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold mb-4">Stay Updated with iStore</h2>
-                <p class="text-xl mb-8 opacity-90">Get the latest deals, product updates, and tech news delivered to your inbox</p>
-                <div class="max-w-md mx-auto">
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <input
-                            type="email"
-                            placeholder="Enter your email address"
-                            class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 placeholder-gray-500"
-                        />
-                        <button class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 whitespace-nowrap">
-                            Subscribe Now
-                        </button>
-                    </div>
-                    <p class="text-sm opacity-75 mt-3">No spam, unsubscribe at any time</p>
-                </div>
+  </section>
+  <!-- feature Pro -->
+
+  <section class="py-12 bg-gray-50 dark:bg-gray-900">
+    <div class="container px-6 xl:p-0 mx-auto max-w-screen-xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Featured Products</h2>
+        <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover our latest and most popular smartphones
+          from top brands</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 xl:gap-8">
+        <!-- iPhone 16 Pro Max -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/16 pro max home.png" alt="iPhone 16 Pro Max" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro Max</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The ultimate iPhone with the largest
+              display and longest battery life.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$1,199</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- foot -->
-<!-- Footer -->
- <footer class="bg-white dark:bg-slate-900 text-gray-800 dark:text-white transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Footer Content -->
-            <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-                <!-- Company Info -->
-                <div class="lg:col-span-1 space-y-4">
-                  <a href="./index.html" class="flex items-center">
-                    <img src="./Logo/ProZone.png" alt="Pro-Zone Logo" class="h-8 w-auto">
-                    <span class="text-xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span></a>
-
-                    <p class="text-gray-600 dark:text-gray-300 text-sm max-w-md">Your trusted partner for premium tech products and exceptional service. Quality guaranteed with fast delivery and comprehensive warranty.</p>
-                    
-                    <!-- Payment Methods -->
-                    <div class="pt-4">
-                        <p class="text-sm font-medium text-gray-700 dark:text-gray-200 mb-3">We accept</p>
-                        <div class="flex flex-wrap gap-2">
-                            <div class="bg-white dark:bg-slate-800 rounded-md p-2 flex items-center justify-center w-12 h-8 border border-gray-200 dark:border-slate-700 transition-colors duration-200">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" class="h-4 w-auto">
-                            </div>
-                            <div class="bg-white dark:bg-slate-800 rounded-md p-2 flex items-center justify-center w-12 h-8 border border-gray-200 dark:border-slate-700 transition-colors duration-200">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-4 w-auto">
-                            </div>
-                            <div class="bg-white dark:bg-slate-800 rounded-md p-2 flex items-center justify-center w-12 h-8 border border-gray-200 dark:border-slate-700 transition-colors duration-200">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-4 w-auto">
-                            </div>
-                            <div class="bg-white dark:bg-slate-800 rounded-md p-2 flex items-center justify-center w-12 h-8 border border-gray-200 dark:border-slate-700 transition-colors duration-200">
-                                <img src="../img/Home/KHQR_Logo.png" alt="KHQR_Logo" class="h-3 w-auto">
-                            </div>
-                            <div class="bg-white dark:bg-slate-800 rounded-md p-2 flex items-center justify-center w-12 h-8 border border-gray-200 dark:border-slate-700 transition-colors duration-200">
-                                <img src="../img/Home/WingHome.png" alt="WingBank_logo" class="h-5 w-auto">
-                            </div>
-                        </div>
-                    </div>
-
-                  
-                </div>
-
-                <!-- Company -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Company</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">About Us</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Careers</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Newsroom</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Investors</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Store Locations</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Resources</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Gift Cards</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Find a Store</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Membership</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Trade-In Program</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Business Solutions</a></li>
-                    </ul>
-                </div>
-
-                <!-- Help -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Help</h3>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Help Center</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Contact Us</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Order Status</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Returns & Exchanges</a></li>
-                        <li><a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">Shipping Info</a></li>
-                    </ul>
-                </div>
-
-                <!-- Apps -->
-                <div class="space-y-4">
-                    <h3 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider">Apps</h3>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="#" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">
-                                <svg class="w-4 h-4 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                                </svg>
-                                MacOS
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">
-                                <svg class="w-4 h-4 mr-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <!-- Shopping Bag -->
-                  <path fill="currentColor" d="M352 144v-16c0-35.3-28.7-64-64-64h-64c-35.3 0-64 28.7-64 64v16H96c-17.7 0-32 14.3-32 32v272c0 17.7 14.3 32 32 32h320c17.7 0 32-14.3 32-32V176c0-17.7-14.3-32-32-32h-64zm-160-16c0-26.5 21.5-48 48-48h32c26.5 0 48 21.5 48 48v16h-128v-16z"/>
-                  <rect x="192" y="220" width="48" height="48" fill="white"/>
-                  <rect x="280" y="220" width="48" height="48" fill="white"/>
-                  <rect x="192" y="320" width="48" height="48" fill="white"/>
-                  <rect x="280" y="320" width="48" height="48" fill="white"/>
-                </svg>
-                                Microsoft Store
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white text-sm transition-colors duration-200">
-                                <svg class="w-4 h-4 mr-3" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 010 1.73l-2.808 1.626L15.699 12l1.999-2.491zM5.864 2.658L16.802 8.99l-2.303 2.303-8.635-8.635z"/>
-                                </svg>
-                                Google Play
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+        <!-- iPhone 16 Pro -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/iPhone_16_ProHome.png" alt="iPhone 16 Pro" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">iPhone 16 Pro</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Pro camera system and powerful
+              performance in a perfect size.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
             </div>
-
-            <!-- Bottom Section -->
-            <div class="flex justify-between items-center border-t border-gray-200 dark:border-slate-800 pt-8 pb-8">
-                <!-- Social Media Section -->
-                    <div class="">
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Facebook</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Instagram</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">Telegram</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-  <path fill-rule="evenodd" d="M9.036 16.455l-.345 4.02c.492 0 .707-.21.963-.456l2.331-2.214 4.83 3.522c.879.492 1.503.237 1.731-.819l3.117-14.733c.284-1.362-.492-1.89-1.416-1.533L2.037 9.204c-1.362.513-1.332 1.254-.225 1.59l4.65 1.446 10.773-6.804c.513-.342.963-.152.597.189l-8.796 7.998z" clip-rule="evenodd" />
-                                </svg>
-
-                            </a>
-                            <a href="#" class="text-gray-500 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
-                                <span class="sr-only">YouTube</span>
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm text-gray-600 dark:text-gray-300">
-                    <p>&copy; 2025 iStore. All rights reserved.</p>
-                    <div class="flex space-x-6">
-                        <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Privacy Policy</a>
-                        <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Terms of Service</a>
-                        <a href="#" class="hover:text-gray-900 dark:hover:text-white transition-colors duration-200">Cookie Policy</a>
-                    </div>
-                </div>
-                <div class="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-300">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                    </svg>
-                    <span class="hidden lg:inline">Secure Shopping</span>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer> 
-  </body>
- <script src="../path/to/flowbite/dist/flowbite.min.js"></script></body>
+
+        <!-- Samsung Galaxy S25 Ultra -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/s25 u home.png" alt="Samsung Galaxy S25 Ultra" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Ultra</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Revolutionary camera system with advanced
+              AI capabilities.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$1,299</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung Galaxy S25 Plus -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/s25 + home.png" alt="Samsung Galaxy S25 Plus" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Plus</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Larger screen and battery in a sleek,
+              premium design.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samsung Galaxy S25 Edge -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/s25 edge home.png" alt="Samsung Galaxy S25 Edge" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Samsung Galaxy S25 Edge</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Curved edge display with immersive
+              viewing experience.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Pixel 9 Pro -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/pixel 9 pro.png" alt="Google Pixel 9 Pro" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">The best of Google AI with an exceptional
+              camera experience.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$899</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Pixel 9 Pro XL -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/pixel 9 pro xl.png" alt="Google Pixel 9 Pro XL" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Google Pixel 9 Pro XL</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Largest Pixel display with all-day
+              battery life and AI features.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$999</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- OPPO Reno 14 Pro -->
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+          <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <img src="../img/Home/reno14.png" alt="OPPO Reno 14 Pro" class="h-40 w-auto object-contain" />
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">OPPO Reno 14 Pro</h3>
+            <p class="text-gray-600 dark:text-gray-300 text-sm mt-2 flex-grow">Stunning design with advanced camera
+              system and fast charging.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <span class="text-xl font-bold text-gray-900 dark:text-white">$799</span>
+              <button
+                class="px-4 py-2 lg:px-3 bg-blue-900 hover:bg-blue-700 dark:bg-blue-900 dark:hover:bg-blue-600 text-white rounded-lg transition-colors duration-200">Add
+                to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- news  -->
+  <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-700 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Stay Updated with Pro-Zone</h2>
+        <p class="text-xl mb-8 opacity-90">Get the latest deals, product updates, and tech news delivered to your inbox
+        </p>
+        <div class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input type="email" placeholder="Enter your email address"
+              class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 placeholder-gray-500" />
+            <button
+              class="bg-white text-blue-800 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 whitespace-nowrap">
+              Subscribe Now
+            </button>
+          </div>
+          <p class="text-sm opacity-75 mt-3">No spam, unsubscribe at any time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- foot -->
+  <footer class="bg-white dark:bg-slate-900 text-gray-800 dark:text-white transition-colors duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+      <!-- Top Section: Logo + Navigation + Payment -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+
+        <!-- Logo & Description -->
+        <div>
+          <a href="./index.html" class="flex items-center mb-3">
+            <img src="./Logo/ProZone.png" alt="Pro-Zone Logo" class="h-8 w-auto" />
+            <span class="text-xl font-[Alegreya,serif] px-2 text-blue-900 dark:text-white font-bold">PRO-ZONE</span>
+          </a>
+          <p class="text-md text-gray-600 dark:text-gray-300 pt-2">
+            Your trusted partner for premium tech products and exceptional service.
+            Quality guaranteed with fast delivery and comprehensive warranty.
+          </p>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="flex flex-col justify-between">
+          <ul class="space-y-2 md:space-y-4 ps-0 md:ps-12">
+            <p class="text-lg font-medium">Menu</p>
+            <li><a href="./index.html" class="hover:text-indigo-600">Home</a></li>
+            <li><a href="./product.html" class="hover:text-indigo-600">Products</a></li>
+            <li><a href="./about.html" class="hover:text-indigo-600">About Us</a></li>
+            <li><a href="./contact.html" class="hover:text-indigo-600">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Payment Methods -->
+        <div>
+          <p class="text-lg font-medium pb-5">We accept</p>
+          <div class="flex flex-wrap gap-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa"
+              class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
+              class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal"
+              class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border" />
+            <img src="../img/Home/KHQR_Logo.png" alt="KHQR"
+              class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border" />
+            <img src="../img/Home/WingHome.png" alt="WingBank"
+              class="h-7 bg-white p-1 rounded-md dark:bg-slate-800 border" />
+          </div>
+          <div class="flex items-center gap-4 pt-7">
+            <a href="#"><img src="../img/app-store.svg" alt="App Store" class="h-11" /></a>
+            <a href="#"><img src="../img/google-play.svg" alt="Google Play" class="h-11" /></a>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-white dark:bg-slate-900 text-gray-800 dark:text-white transition-colors duration-300">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <!-- Social + Policy + Secure -->
+          <div
+            class="flex flex-col md:flex-row md:justify-between md:items-center border-t border-gray-200 dark:border-slate-800 space-y-0 md:space-x-4 pt-6 pb-3">
+
+            <!-- Social Icons -->
+            <div class="flex justify-center md:justify-start space-x-4">
+              <a href="#"
+                class="text-blue-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="sr-only">Facebook</span>
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#"
+                class="text-pink-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="sr-only">Instagram</span>
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#"
+                class="text-blue-800 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="sr-only">Telegram</span>
+                <i class="fab fa-telegram-plane"></i>
+              </a>
+              <a href="#"
+                class="text-red-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-200 p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-lg">
+                <span class="sr-only">YouTube</span>
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+
+            <!-- Policy Links -->
+            <div
+              class="flex flex-col items-center md:flex-row text-sm text-gray-600 dark:text-gray-300 space-y-2 md:space-y-0 md:space-x-6">
+              <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Privacy Policy</a>
+              <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Terms of Service</a>
+              <a href="#" class="hover:text-gray-900 dark:hover:text-white transition">Cookie Policy</a>
+            </div>
+
+            <!-- Secure Shopping -->
+            <div
+              class="flex justify-center md:justify-end items-center space-x-2 text-sm text-blue-800 dark:text-gray-300 pt-2 md:pt-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              <span class="">Secure Shopping</span>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <p class="text-center text-sm text-gray-600 dark:text-gray-300">
+            &copy; 2025 Pro-Zone. All rights reserved.
+          </p>
+        </div>
+      </footer>
+
+    </div>
+  </footer>
+</body>
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+
+</body>
+
 </html>
