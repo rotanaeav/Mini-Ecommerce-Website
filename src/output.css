@@ -1521,9 +1521,6 @@
     width: calc(var(--spacing) * 5);
     height: calc(var(--spacing) * 5);
   }
-  .\!h-48 {
-    height: calc(var(--spacing) * 48) !important;
-  }
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -1669,9 +1666,6 @@
     .datatable-wrapper & .datatable-empty {
       text-align: center;
     }
-  }
-  .\!w-48 {
-    width: calc(var(--spacing) * 48) !important;
   }
   .w-1\/2 {
     width: calc(1/2 * 100%);
